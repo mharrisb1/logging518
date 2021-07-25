@@ -8,7 +8,7 @@ repository = "https://github.com/mharrisb1/logging518"
 authors = ["Michael Harris <michael.harrisru@gmail.com>"]
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = "^3.6"
 toml = "^0.10"
 
 [tool.poetry.dev-dependencies]
