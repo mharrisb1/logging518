@@ -2,6 +2,9 @@
 name = "logging518"
 version = "0.1.0"
 description = "Custom logger config using pyproject.toml"
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com/mharrisb1/logging518"
 authors = ["Michael Harris <michael.harrisru@gmail.com>"]
 
 [tool.poetry.dependencies]
