@@ -5,7 +5,7 @@ from logging518.logger518 import default_logging_config, Logger518, __logger518_
 
 
 def test_version():
-    assert __version__ == "0.1.0"
+    assert __version__ == "0.1.1"
 
 
 def test_successful_parsing():
