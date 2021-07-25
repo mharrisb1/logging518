@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "logging518"
+version = "0.1.0"
+description = "Custom logger config using pyproject.toml"
+authors = ["Michael Harris <michael.harrisru@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+toml = "^0.10"
+
+[tool.poetry.dev-dependencies]
+pytest = "^6.2"
+black = "^21.6b0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

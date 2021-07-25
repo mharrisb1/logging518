@@ -1,0 +1,56 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.183.0/containers/docker-existing-dockerfile
+{
+    "name": "logging518",
+    // Sets the run context to one level up instead of the .devcontainer folder.
+    "context": "..",
+    // Update the 'dockerFile' property if you aren't using the standard 'Dockerfile' filename.
+    "dockerFile": "./Dockerfile",
+    // Docker CLI run arguments
+    // "runArgs": [],
+    // Set *default* container specific settings.json values on container create.
+    "settings": {
+        "editor.formatOnSave": true,
+        "python.analysis.typeCheckingMode": "basic",
+        "python.formatting.provider": "black",
+        "python.formatting.blackArgs": [
+            "-l 88"
+        ],
+        "python.testing.pytestArgs": [
+            "-rP",
+            "-v"
+        ],
+        "python.testing.pytestEnabled": true,
+        "autoDocstring.docstringFormat": "numpy",
+        "workbench.colorTheme": "One Dark Pro",
+        "terminal.integrated.inheritEnv": false,
+        "oneDarkPro.italic": false,
+        "python.testing.autoTestDiscoverOnSaveEnabled": false,
+        "python.testing.promptToConfigure": false,
+        "git.autofetch": true
+    },
+    // Add the IDs of extensions you want installed when the container is created.
+    "extensions": [
+        "codezombiech.gitignore",
+        "pkief.material-icon-theme",
+        "zhuangtongfa.material-theme",
+        "ms-python.vscode-pylance",
+        "ms-python.python",
+        "njpwerner.autodocstring",
+        "gruntfuggly.todo-tree",
+        "eamodio.gitlens",
+        "ms-vscode-remote.remote-containers",
+        "bungcip.better-toml",
+        "github.vscode-pull-request-github"
+    ],
+    // Use 'forwardPorts' to make a list of ports inside the container available locally.
+    // "forwardPorts": [],
+    // Uncomment the next line to run commands after the container is created - for example installing curl.
+    "postCreateCommand": "pytest ."
+    // Uncomment when using a ptrace-based debugger like C++, Go, and Rust
+    // "runArgs": [ "--cap-add=SYS_PTRACE", "--security-opt", "seccomp=unconfined" ],
+    // Uncomment to use the Docker CLI from inside the container. See https://aka.ms/vscode-remote/samples/docker-from-docker.
+    // "mounts": [ "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind" ],
+    // Uncomment to connect as a non-root user if you've added one. See https://aka.ms/vscode-remote/containers/non-root.
+    // "remoteUser": "vscode"
+}
