@@ -83,7 +83,7 @@ When parsed by `logging518` the above configuration will turn into the below key
 ```json
 {
     "version": 1,
-    "disable_existing_loggers": True,
+    "disable_existing_loggers": true,
     "formatters": {
         "standard": {
             "format": "%(asctime)s %(levelname)-8s %(name)-15s %(message)s"
