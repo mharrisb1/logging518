@@ -1,18 +1,18 @@
 # logging518
 
+[![PyPI version](https://badge.fury.io/py/logging518.svg)](https://badge.fury.io/py/logging518)
+
 Configure Python's native `logging` library using `pyproject.toml`
 
-<br>
-
 # About
-`logging518` is simply a wrapper around the [`logging` module in the standard library](https://docs.python.org/3/library/logging.html) that allows a developer to configure the module within the `pyproject.toml` config file instead of using the an additional `.ini` or `.conf` file as specified when using the `fileConfig()` method.
+`logging518` is simply a wrapper around the [`logging` module in the standard library](https://docs.python.org/3/library/logging.html). It allows a developer to configure the module within the `pyproject.toml` config file instead of using an additional `.ini` or `.conf` config file as specified when using the `fileConfig()` method.
 
-## Why `pyproject.toml` instead of `logging.conf`
+Why use `pyproject.toml` instead of `logging.conf`?
+
 [PEP 518](https://www.python.org/dev/peps/pep-0518/) introduced a new config file, `pyproject.toml`, for specifying build dependecies. [An interesting side effect](https://snarky.ca/what-the-heck-is-pyproject-toml/) of this new config file standard is that many tools started allowing developers to configure them using the `pyproject.toml` file that likely already existed in their project.
 
 Using a single, universal config file helps declutter all of those additional config files for each tool (many those `.conf`, `.ini`, `.yml`, etc. files at the root level) bringing some minimalism back in our lives.
 
-<br>
 
 # Usage
 Under the hood, `logging518` parses the `pyproject.toml` file using the [`toml` library](https://github.com/uiri/toml) and then passes that output to the `dictConfig()` method.
@@ -20,6 +20,12 @@ Under the hood, `logging518` parses the `pyproject.toml` file using the [`toml` 
 Following the spec in PEP 518 pertaining to the [tool table](https://www.python.org/dev/peps/pep-0518/#tool-table), `logging518` will recognize all config values associated with the `tool.logging518` key.
 
 Any config option specified in the [`logging` configuration dictionary schema](https://docs.python.org/3/library/logging.config.html#configuration-dictionary-schema) is allowed.
+
+## Installation
+
+```python
+pip install logging518
+```
 
 ## Example Config
 
@@ -113,7 +119,6 @@ When parsed by `logging518` the above configuration will turn into the below key
 
 **NOTE**: Please see [this StackOverflow post](https://stackoverflow.com/a/7507842) for an dictionary example with `dictConfig()`.
 
-<br>
 
 ## Accessing the logger
 
@@ -135,7 +140,6 @@ from logging518 import log
 log.info("This will be an info message")
 ```
 
-<br>
 
 ## Debugging your configuration
 
