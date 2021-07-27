@@ -1,15 +1,15 @@
 from logging import Logger
 
 from logging518 import __version__
-from logging518.logger518 import default_logging_config, Logger518, __logger518__
+from logging518 import Logging518, logger, log, get_logger
 
 
 def test_version():
-    assert __version__ == "0.1.2"
+    assert __version__ == "0.2.0"
 
 
 def test_successful_parsing():
-    l = __logger518__(file_path="tests/fixtures/example_success.toml")
+    l = Logging518(file_path="tests/pyproject_test.toml")
 
     test_dict = {
         "version": 1,
@@ -41,8 +41,18 @@ def test_successful_parsing():
     assert l.config == test_dict
 
 
-def test_reversion_to_default_config():
-    l = __logger518__(file_path="tests/fixtures/example_fail.toml")
+def test_default_fallback():
+    l = Logging518()  # default to main pyproject.toml file
 
-    assert l.config == default_logging_config
+    assert l.config == l.default_logging_config
     assert isinstance(l.logger, Logger)
+
+
+def test_logger_name():
+    l1 = logger
+    l2 = log
+    l3 = get_logger("foo")
+
+    assert l1.name == "root"
+    assert l2.name == "root"
+    assert l3.name == "foo"
