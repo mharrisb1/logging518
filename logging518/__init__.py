@@ -1,3 +1,7 @@
-__version__ = "0.1.2"
+__version__ = "0.2.0"
 
-from .logger518 import logger, log, debug_config, debug_file_path
+from .main import Logging518
+
+debug_config = Logging518().config
+logger = log = Logging518().logger
+get_logger = Logging518.get_logger
