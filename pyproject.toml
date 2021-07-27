@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "logging518"
-version = "0.1.2"
+version = "0.2.0"
 description = "Custom logger config using pyproject.toml"
 license = "MIT"
 readme = "README.md"

@@ -120,9 +120,9 @@ When parsed by `logging518` the above configuration will turn into the below key
 **NOTE**: Please see [this StackOverflow post](https://stackoverflow.com/a/7507842) for an dictionary example with `dictConfig()`.
 
 
-## Accessing the logger
+## Using the logger
 
-To access the logger:
+To access the root logger:
 
 ```python
 from logging518 import logger
@@ -130,7 +130,7 @@ from logging518 import logger
 logger.info("This will be an info message")
 ```
 
-The `logger` object accessed from `logging518` is just a [regular `Logger` object](https://docs.python.org/3/library/logging.html#logging.Logger) from the `logging` module meaning all of the methods you would normally use are available to you.
+The `logger` object accessed from `logging518` is normal a [regular `Logger` object](https://docs.python.org/3/library/logging.html#logging.Logger) from the `logging` module meaning all of the methods you would normally use are available to you. Note that this is actually the root logger.
 
 Prefer to use `log` instead `logger` when you create a `Logger` object? The below works too (and is just a copy of the `logger` object demoed above):
 
@@ -140,6 +140,14 @@ from logging518 import log
 log.info("This will be an info message")
 ```
 
+To access a logger other than the root, you can use the `get_logger` method:
+
+```python
+from logging518 import get_logger
+
+logger = get_logger("foo")
+assert logger.name == "foo"
+```
 
 ## Debugging your configuration
 
@@ -150,12 +158,4 @@ from pprint import pprint
 from logging518 import debug_config
 
 pprint(debug_config)
-```
-
-You can also view the absolute path of the configuration file that `logging518` used by importing `debug_file_path`:
-
-```python
-from logging518 import debug_file_path
-
-print(debug_file_path)
 ```
