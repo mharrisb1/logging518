@@ -1,11 +1,12 @@
 [tool.poetry]
 name = "logging518"
-version = "0.2.0"
-description = "Custom logger config using pyproject.toml"
+version = "0.2.1"
+description = "Configure Python's native logging module using pyproject.toml"
 license = "MIT"
 readme = "README.md"
 repository = "https://github.com/mharrisb1/logging518"
 authors = ["Michael Harris <michael.harrisru@gmail.com>"]
+exclude = [".devcontainer/", ".github"]
 
 [tool.poetry.dependencies]
 python = "^3.6"
