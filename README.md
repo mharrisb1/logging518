@@ -1,6 +1,6 @@
 # logging518
 
-[![PyPI version](https://badge.fury.io/py/logging518.svg)](https://badge.fury.io/py/logging518)
+[![PyPI version](https://badge.fury.io/py/logging518.svg)](https://badge.fury.io/py/logging518) ![PyPI - Downloads](https://img.shields.io/pypi/dm/logging518)
 
 Configure Python's native `logging` library using `pyproject.toml`
 
@@ -84,7 +84,7 @@ The configuration above:
 3. Configured the root logger to use both handlers created
 
 
-When parsed by `logging518` the above configuration will turn into the below key-value pair:
+When parsed by `logging518` the above configuration will turn into the below KV object:
 
 ```json
 {
