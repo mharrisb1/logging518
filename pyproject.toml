@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "logging518"
-version = "0.2.1"
+version = "0.2.2"
 description = "Configure Python's native logging module using pyproject.toml"
 license = "MIT"
 readme = "README.md"
