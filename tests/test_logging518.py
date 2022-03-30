@@ -1,4 +1,5 @@
 from logging import Logger
+from typing import Dict
 
 from logging518 import __version__
 from logging518 import Logging518, logger, log, get_logger
@@ -56,3 +57,20 @@ def test_logger_name():
     assert l1.name == "root"
     assert l2.name == "root"
     assert l3.name == "foo"
+
+
+def test_config_callback():
+    def dummy_callback(config):
+        assert isinstance(config, Dict)
+        assert config["version"] == 1
+        config["test_value"] = "testing"
+
+    assert len(Logging518.config_callbacks) == 0
+    try:
+        Logging518.add_config_callback(dummy_callback)
+        assert len(Logging518.config_callbacks) == 1
+        l = Logging518(file_path="tests/pyproject_test.toml")
+        assert l._config["test_value"] == "testing"
+    finally:
+        Logging518.config_callbacks.clear()
+        assert len(Logging518.config_callbacks) == 0

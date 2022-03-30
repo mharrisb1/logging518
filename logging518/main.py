@@ -1,4 +1,4 @@
-from typing import Union
+from typing import Callable, List, Union
 from pathlib import Path
 import logging
 import logging.config
@@ -17,6 +17,8 @@ class Logging518:
     >>> logger.info("Example info message)
     """
 
+    config_callbacks: List[Callable] = list()
+
     def __init__(self, file_path: Union[Path, str] = "pyproject.toml") -> None:
 
         self._file_path = Path(file_path)  # TODO - prop
@@ -28,6 +30,10 @@ class Logging518:
                 .get("tool", {})  # get PEP 518 tool table
                 .get("logging518", self.default_logging_config)
             )
+
+            for func in self.config_callbacks:
+                func(self._config)
+
             logging.config.dictConfig(self._config)
 
     @property
@@ -48,3 +54,7 @@ class Logging518:
     ) -> logging.Logger:
         cls(file_path)
         return logging.getLogger(name=name)
+
+    @classmethod
+    def add_config_callback(cls, func: Callable):
+        cls.config_callbacks.append(func)

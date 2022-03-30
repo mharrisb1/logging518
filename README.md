@@ -159,3 +159,18 @@ from logging518 import debug_config
 
 pprint(debug_config)
 ```
+
+## Config Callback
+
+It can be helpful at times to modify a base configuration at runtime before the handlers are finalized. This can be done by passing a function to `Logging518.add_config_callback()` which makes changes to the config before `dictConfig()` is called.
+
+```python
+import os
+from logging518 import Logging518
+
+def change_filename(config):
+    filename = os.environ["LOGGING_FILENAME"]
+    config["handlers"]["file"]["filename"] = filename
+
+Logging518.add_config_callback(change_filename)
+```
