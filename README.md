@@ -168,7 +168,7 @@ It can be helpful at times to modify a base configuration at runtime before the 
 import os
 from logging518 import Logging518
 
-Logging518.config_callback
+@Logging518.config_callback
 def change_filename(config):
     filename = os.environ["LOGGING_FILENAME"]
     config["handlers"]["file"]["filename"] = filename
