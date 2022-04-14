@@ -60,14 +60,15 @@ def test_logger_name():
 
 
 def test_config_callback():
+    assert len(Logging518.config_callbacks) == 0
+
+    @Logging518.config_callback
     def dummy_callback(config):
         assert isinstance(config, Dict)
         assert config["version"] == 1
         config["test_value"] = "testing"
 
-    assert len(Logging518.config_callbacks) == 0
     try:
-        Logging518.add_config_callback(dummy_callback)
         assert len(Logging518.config_callbacks) == 1
         l = Logging518(file_path="tests/pyproject_test.toml")
         assert l._config["test_value"] == "testing"

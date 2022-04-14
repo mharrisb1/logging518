@@ -56,5 +56,5 @@ class Logging518:
         return logging.getLogger(name=name)
 
     @classmethod
-    def add_config_callback(cls, func: Callable):
+    def config_callback(cls, func: Callable):
         cls.config_callbacks.append(func)
