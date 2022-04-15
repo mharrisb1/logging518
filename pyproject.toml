@@ -9,12 +9,11 @@ authors = ["Michael Harris <michael.harrisru@gmail.com>"]
 exclude = [".devcontainer/", ".github"]
 
 [tool.poetry.dependencies]
-python = "^3.6"
+python = "^3.8"
 toml = "^0.10"
 
 [tool.poetry.dev-dependencies]
 pytest = "^6.2"
-black = "^21.6b0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
