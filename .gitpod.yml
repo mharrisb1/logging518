@@ -1,2 +1,10 @@
 image:
   file: .gitpod.dockerfile
+
+vscode:
+  extensions:
+    - codezombiech.gitignore
+    - ms-python.python
+    - njpwerner.autodocstring
+    - gruntfuggly.todo-tree
+    - bungcip.better-toml
