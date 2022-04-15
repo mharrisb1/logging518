@@ -1,17 +1,16 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
 // https://github.com/microsoft/vscode-dev-containers/tree/v0.183.0/containers/docker-existing-dockerfile
 {
-    "name": "logging518",
+    "name": "python",
     // Sets the run context to one level up instead of the .devcontainer folder.
     "context": "..",
     // Update the 'dockerFile' property if you aren't using the standard 'Dockerfile' filename.
-    "dockerFile": "./Dockerfile",
+    "dockerFile": "../.gitpod.dockerfile",
     // Docker CLI run arguments
     // "runArgs": [],
     // Set *default* container specific settings.json values on container create.
     "settings": {
         "editor.formatOnSave": true,
-        "python.analysis.typeCheckingMode": "basic",
         "python.formatting.provider": "black",
         "python.formatting.blackArgs": [
             "-l 88"
@@ -22,9 +21,7 @@
         ],
         "python.testing.pytestEnabled": true,
         "autoDocstring.docstringFormat": "numpy",
-        "workbench.colorTheme": "One Dark Pro",
         "terminal.integrated.inheritEnv": false,
-        "oneDarkPro.italic": false,
         "python.testing.autoTestDiscoverOnSaveEnabled": false,
         "python.testing.promptToConfigure": false,
         "git.autofetch": true
@@ -32,16 +29,11 @@
     // Add the IDs of extensions you want installed when the container is created.
     "extensions": [
         "codezombiech.gitignore",
-        "pkief.material-icon-theme",
-        "zhuangtongfa.material-theme",
         "ms-python.vscode-pylance",
         "ms-python.python",
         "njpwerner.autodocstring",
         "gruntfuggly.todo-tree",
-        "eamodio.gitlens",
-        "ms-vscode-remote.remote-containers",
         "bungcip.better-toml",
-        "github.vscode-pull-request-github"
     ],
     // Use 'forwardPorts' to make a list of ports inside the container available locally.
     // "forwardPorts": [],
