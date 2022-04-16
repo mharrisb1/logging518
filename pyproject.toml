@@ -1,3 +1,7 @@
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
 [tool.poetry]
 name = "logging518"
 version = "0.2.2"
@@ -15,7 +19,17 @@ toml = "^0.10"
 [tool.poetry.dev-dependencies]
 black = "^22.3.0"
 pytest = "^6.2"
+pre-commit = "^2.18.1"
 
-[build-system]
-requires = ["poetry-core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"
+[tool.black]
+line-length = 96
+target-version = ['py38']  # Specify your Python version
+include = '\.pyi?$'
+exclude = '''
+/(
+  | \.git
+  | \.mypy_cache
+  | \.venv
+  | dist
+)/
+'''
