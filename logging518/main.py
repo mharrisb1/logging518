@@ -19,7 +19,7 @@ class Logging518:
 
     def __init__(self, file_path: Union[Path, str] = "pyproject.toml") -> None:
 
-        self._file_path = Path(file_path)  # TODO - prop
+        self._file_path = Path(file_path)
         self.default_logging_config = {"version": 1}
 
         with open(self._file_path, "r") as f:
