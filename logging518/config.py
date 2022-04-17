@@ -15,6 +15,13 @@ def fileConfig(fname: Union[str, Path]) -> None:
     ----------
     fname : Union[str, Path]
         File path
+
+    Raises
+    ------
+    KeyError
+        If tool table not found in TOML file
+    KeyError
+        If logging not found in tool table
     """
 
     # tomli/tomlib compatibility layer
