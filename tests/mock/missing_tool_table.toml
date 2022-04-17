@@ -1,0 +1,35 @@
+[logging]
+version = 1
+disable_existing_loggers = false
+
+[logging.formatters.child]
+class = "logging.Formatter"
+format = "[%(asctime)s]\t%(levelname)s\t :: consoleChild\t:: %(name)s ::  %(message)s"
+
+[logging.formatters.parent]
+class = "logging.Formatter"
+format = "[%(asctime)s]\t%(levelname)s\t :: consoleParent\t:: %(name)s ::  %(message)s"
+
+[logging.handlers.consoleChild]
+level = "DEBUG"
+class = "logging.StreamHandler"
+formatter = "child"
+
+[logging.handlers.consoleParent]
+level = "WARNING"
+class = "logging.StreamHandler"
+formatter = "parent"
+
+[logging.root]
+level = "NOTSET"
+handlers = ["consoleChild", "consoleParent"]
+
+[logging.logger.project]
+level = "WARNING"
+handlers = ["consoleParent"]
+propagate = true
+
+[logging.logger.project.child]
+level = "DEBUG"
+handlers = ["consoleChild"]
+propagate = true
