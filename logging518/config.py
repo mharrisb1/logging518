@@ -49,5 +49,3 @@ def fileConfig(fname: Union[str, Path]) -> None:
         raise KeyError("Logging section not found in tool table. See documentation")
 
     logging.config.dictConfig(tool_table_logging)
-
-# TODO - update docs
