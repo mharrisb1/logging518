@@ -9,22 +9,12 @@ def fileConfig(fname: Union[str, Path]) -> None:
     """Imitates Python's native logging `fileConfig` interface, but allows
     the developer to pass in a TOML file instead of a ConfigParser-form file.
 
-    Example
-    -------
-
     >>> logging518.config.fileConfig("pyproject.toml")
 
     Parameters
     ----------
     fname : Union[str, Path]
         File path
-
-    Raises
-    ------
-    KeyError
-        If tool table not found in TOML file
-    KeyError
-        If logging not found in tool table
     """
 
     # tomli/tomlib compatibility layer
