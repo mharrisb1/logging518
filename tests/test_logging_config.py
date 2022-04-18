@@ -4,9 +4,9 @@ import logging518.config
 import pytest
 
 try:
-    import tomlib
+    import tomllib
 except ModuleNotFoundError:
-    import tomli as tomlib
+    import tomli as tomllib
 
 
 def test_successful_config():
@@ -22,7 +22,7 @@ def test_successful_config():
 
 
 def test_failure_config():
-    with pytest.raises(tomlib.TOMLDecodeError):
+    with pytest.raises(tomllib.TOMLDecodeError):
         logging518.config.fileConfig("tests/mock/failure.toml")
 
 
