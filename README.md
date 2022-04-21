@@ -56,3 +56,5 @@ LOGGING_CONFIG = {
 
 logging.config.dictConfig(LOGGING_CONFIG)
 ```
+
+More examples can be found in the 👩‍🍳 [Cookbook](https://mharrisb1.github.io/logging518/)
