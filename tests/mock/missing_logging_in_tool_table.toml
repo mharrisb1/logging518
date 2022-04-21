@@ -1,0 +1,35 @@
+[tool.foo]
+version = 1
+disable_existing_loggers = false
+
+[tool.foo.formatters.child]
+class = "logging.Formatter"
+format = "[%(asctime)s]\t%(levelname)s\t :: consoleChild\t:: %(name)s ::  %(message)s"
+
+[tool.foo.formatters.parent]
+class = "logging.Formatter"
+format = "[%(asctime)s]\t%(levelname)s\t :: consoleParent\t:: %(name)s ::  %(message)s"
+
+[tool.foo.handlers.consoleChild]
+level = "DEBUG"
+class = "logging.StreamHandler"
+formatter = "child"
+
+[tool.foo.handlers.consoleParent]
+level = "WARNING"
+class = "logging.StreamHandler"
+formatter = "parent"
+
+[tool.foo.root]
+level = "NOTSET"
+handlers = ["consoleChild", "consoleParent"]
+
+[tool.foo.logger.project]
+level = "WARNING"
+handlers = ["consoleParent"]
+propagate = true
+
+[tool.foo.logger.project.child]
+level = "DEBUG"
+handlers = ["consoleChild"]
+propagate = true
