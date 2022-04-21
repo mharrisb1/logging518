@@ -1,6 +1,6 @@
 # 🪵 logging518
 
-[![PyPI version](https://badge.fury.io/py/logging518.svg)](https://badge.fury.io/py/logging518) ![PyPI - Downloads](https://img.shields.io/pypi/dm/logging518)
+[![PyPI version](https://badge.fury.io/py/logging518.svg)](https://badge.fury.io/py/logging518) ![PyPI - Downloads](https://img.shields.io/pypi/dm/logging518) [![Test Matrix](https://github.com/mharrisb1/logging518/actions/workflows/test_matrix.yml/badge.svg)](https://github.com/mharrisb1/logging518/actions/workflows/test_matrix.yml)
 
 Use your pyproject.toml (or any other TOML file) to configure Python's native logging module
 
