@@ -4,7 +4,7 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
 name = "logging518"
-version = "0.2.2"
+version = "1.0.0"
 description = "Configure Python's native logging module using pyproject.toml"
 license = "MIT"
 readme = "README.md"
@@ -13,12 +13,12 @@ authors = ["Michael Harris <michael.harrisru@gmail.com>"]
 exclude = [".devcontainer/", ".github/"]
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = ">=3.7,<4.0"
 tomli = { version = "^2.0.1", python = "<3.11" }
 
 [tool.poetry.dev-dependencies]
 black = "^22.3.0"
-pytest = "^6.2"
+pytest = "^7.1"
 pre-commit = "^2.18.1"
 mypy = "^0.942"
 
