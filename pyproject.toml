@@ -13,7 +13,7 @@ authors = ["Michael Harris <michael.harrisru@gmail.com>"]
 exclude = [".devcontainer/", ".github/"]
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = ">=3.6,<4.0"
 tomli = { version = "^2.0.1", python = "<3.11" }
 
 [tool.poetry.dev-dependencies]
