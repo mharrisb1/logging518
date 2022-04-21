@@ -20,7 +20,7 @@ logger.info("Hello, log!")
 
 ## Configure
 
-`logging518.config.fileConfig` simply deserializes the TOML file you pass in (using `tomli`/`tomlib`) and passes the contents to `logging.config.dictConfig`.
+`logging518.config.fileConfig` simply deserializes the TOML file you pass in (using `tomli`/`tomllib`) and passes the contents to `logging.config.dictConfig`.
 
 `logging518.config.fileConfig` uses the [tool table](https://peps.python.org/pep-0518/#tool-table) in your TOML file to look up the configuration. All logging config should be defined under `tool.logging` in the tool table.
 
