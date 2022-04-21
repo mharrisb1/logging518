@@ -26,6 +26,8 @@ jobs:
       - name: Poetry install
         run: poetry install --no-dev
       - name: Pytest
-        run: poetry run pytest
+        run: |
+          poetry add pytest
+          poetry run pytest
       - name: Test build
         run: poetry build
