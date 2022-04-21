@@ -26,12 +26,12 @@ def fileConfig(fname: Union[str, Path]) -> None:
 
     # tomli/tomlib compatibility layer
     try:
-        import tomlib  # type: ignore
+        import tomllib  # type: ignore
     except ModuleNotFoundError:
-        import tomli as tomlib  # type: ignore
+        import tomli as tomllib  # type: ignore
 
     with open(fname, "rb") as stream:
-        toml_dict = tomlib.load(stream)
+        toml_dict = tomllib.load(stream)
 
     tool_table = toml_dict.get("tool", {})
 
